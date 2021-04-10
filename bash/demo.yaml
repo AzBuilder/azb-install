@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo
+  labels:
+    aadpodidbinding: azb-identity
+spec:
+  containers:
+  - name: azcli
+    image: mcr.microsoft.com/azure-cli
+    command: ["/bin/sh","-c","echo 'Connecting to Azure...'; az login --identity --allow-no-subscriptions; echo 'Show Azure Subscription...'; az account list --all; echo 'Contecting to AKS'; az aks get-credentials --resource-group aks-azb-rg --name aks-azb;"]
+  restartPolicy: OnFailure
