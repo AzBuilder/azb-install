@@ -79,8 +79,9 @@ kubectl get pods
 NAME   READY   STATUS      RESTARTS   AGE
 demo   0/1     Completed   0          82s
 ```
-Once the status is completed Validate the logs to see if the POD is connecting to Azure and the AKS Cluster with the user-assigned managed identity
+Once the status is completed validate the logs to see if the POD is connecting to Azure and the AKS Cluster with the user-assigned managed identity
 
+Example: 
 ```bash
 kubectl logs demo
 Connecting to Azure...
